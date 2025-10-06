@@ -1,0 +1,173 @@
+/* Custom Fonts for Slaughter House Management System */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Font Family Variables */
+:root {
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Courier New', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+/* Body Font */
+body {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-primary);
+}
+
+/* Buttons */
+.btn {
+    font-family: var(--font-primary);
+    font-weight: 500;
+}
+
+/* Form Elements */
+.form-control, .form-select {
+    font-family: var(--font-primary);
+}
+
+/* Navigation */
+.navbar-brand {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+}
+
+/* Cards */
+.card-title {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+}
+
+/* Tables */
+.table th {
+    font-family: var(--font-primary);
+    font-weight: 600;
+}
+
+/* Code and Preformatted Text */
+code, pre, .log-record-info {
+    font-family: var(--font-mono);
+}
+
+/* Small Text */
+small, .text-small {
+    font-family: var(--font-primary);
+}
+
+/* Font Weight Utilities */
+.fw-300 { font-weight: 300; }
+.fw-400 { font-weight: 400; }
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+
+/* Font Size Utilities */
+.fs-8 { font-size: 0.5rem; }
+.fs-9 { font-size: 0.5625rem; }
+.fs-10 { font-size: 0.625rem; }
+.fs-11 { font-size: 0.6875rem; }
+.fs-12 { font-size: 0.75rem; }
+.fs-13 { font-size: 0.8125rem; }
+.fs-14 { font-size: 0.875rem; }
+.fs-15 { font-size: 0.9375rem; }
+.fs-16 { font-size: 1rem; }
+.fs-17 { font-size: 1.0625rem; }
+.fs-18 { font-size: 1.125rem; }
+.fs-19 { font-size: 1.1875rem; }
+.fs-20 { font-size: 1.25rem; }
+.fs-21 { font-size: 1.3125rem; }
+.fs-22 { font-size: 1.375rem; }
+.fs-23 { font-size: 1.4375rem; }
+.fs-24 { font-size: 1.5rem; }
+
+/* Line Height Utilities */
+.lh-1 { line-height: 1; }
+.lh-2 { line-height: 1.2; }
+.lh-3 { line-height: 1.3; }
+.lh-4 { line-height: 1.4; }
+.lh-5 { line-height: 1.5; }
+.lh-6 { line-height: 1.6; }
+.lh-7 { line-height: 1.7; }
+.lh-8 { line-height: 1.8; }
+
+/* Letter Spacing */
+.ls-1 { letter-spacing: 0.05em; }
+.ls-2 { letter-spacing: 0.1em; }
+.ls-3 { letter-spacing: 0.15em; }
+.ls-4 { letter-spacing: 0.2em; }
+
+/* Text Transform */
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+/* Font Style */
+.font-italic { font-style: italic; }
+.font-oblique { font-style: oblique; }
+
+/* Text Decoration */
+.text-underline { text-decoration: underline; }
+.text-through { text-decoration: line-through; }
+.text-none { text-decoration: none; }
+
+/* Font Display Optimization */
+.font-display-swap {
+    font-display: swap;
+}
+
+.font-display-auto {
+    font-display: auto;
+}
+
+.font-display-block {
+    font-display: block;
+}
+
+.font-display-fallback {
+    font-display: fallback;
+}
+
+.font-display-optional {
+    font-display: optional;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 576px) {
+    h1, .h1 { font-size: 1.5rem; }
+    h2, .h2 { font-size: 1.25rem; }
+    h3, .h3 { font-size: 1.125rem; }
+}
+
+@media (min-width: 768px) {
+    .fs-md-14 { font-size: 0.875rem; }
+    .fs-md-16 { font-size: 1rem; }
+    .fs-md-18 { font-size: 1.125rem; }
+    .fs-md-20 { font-size: 1.25rem; }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    code, pre {
+        font-family: 'Courier New', Courier, monospace;
+    }
+}

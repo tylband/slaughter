@@ -1,0 +1,43 @@
+Debug Log for Fee Management System
+
+This file will contain debug information for troubleshooting issues with saving animal details and fee breakdown.
+
+Check the PHP error log for API debug logs added in api_fees.php.
+
+Date: 2025-09-24
+Time: 07:00 UTC+8
+
+Recent changes made:
+- Changed animal select event from onblur to onchange
+- Added clearing of selected options in modal preparation
+- Added skipping of placeholder option in animal details update
+- Removed readonly from total fee input fields
+- Added hiding of animal select until client is selected
+- Added debug logging in API for POST data
+
+To debug saving issues:
+1. Attempt to save a fee operation
+2. Check the PHP error log for the logged data
+3. Check for any exceptions or errors in the log
+4. Verify that the data structure matches expectations
+
+Expected data structure for POST:
+{
+  "CID": "client_id",
+  "BID": "business_id" (optional),
+  "MID": "code_marking_id" (optional),
+  "Slaughter_Date": "datetime_string",
+  "Add_On_Flag": "0" or "1",
+  "details": [
+    {
+      "AID": "animal_id",
+      "No_of_Heads": number,
+      "No_of_Kilos": number,
+      "Slaughter_Fee": number,
+      "Corral_Fee": number,
+      "Ante_Mortem_Fee": number,
+      "Post_Mortem_Fee": number,
+      "Delivery_Fee": number
+    }
+  ]
+}
