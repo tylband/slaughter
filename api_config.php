@@ -35,5 +35,18 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 header("Content-Type: application/javascript");
+
+// Use .env value only if its host matches the current request host.
+$_env_api_url   = $_ENV['API_BASE_URL'] ?? '';
+$_current_host  = $_SERVER['HTTP_HOST'] ?? '';
+$_env_host      = $_env_api_url !== '' ? (parse_url($_env_api_url, PHP_URL_HOST) ?? '') : '';
+if ($_env_api_url !== '' && $_env_host === $_current_host) {
+    $computed_api_base = rtrim($_env_api_url, '/');
+} else {
+    $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+    $host   = $_current_host ?: 'localhost';
+    $project_root = dirname(dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+    $computed_api_base = $scheme . '://' . $host . rtrim($project_root, '/') . '/API';
+}
 ?>
-const API_BASE_URL = "<?php echo rtrim($_ENV['API_BASE_URL'], '/'); ?>";
+const API_BASE_URL = "<?php echo $computed_api_base; ?>";

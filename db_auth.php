@@ -2,6 +2,13 @@
 // Secure Database-Based Token Authentication System with Hashed Tokens
 // Implements atomic token rotation with proper database tables
 
+// Apply CORS headers when called from an API endpoint (not from a system page).
+$_dba_caller = basename($_SERVER['SCRIPT_FILENAME'] ?? '');
+if (strncmp($_dba_caller, 'api_', 4) === 0) {
+    require_once __DIR__ . '/cors.php';
+}
+unset($_dba_caller);
+
 // Load environment variables from API/.env (function already defined in config.php)
 if (!function_exists('loadEnv')) {
     function loadEnv($path) {
