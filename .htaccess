@@ -1,0 +1,16 @@
+# Upload this folder's files to CentOS: /var/www/html/api/lcr/rp/
+# Public: https://sakatamalaybalay.com/api/lcr/rp/ccror-dyn.php
+# Connects to: https://192.168.108.89:4433/elcr/Dynamic_Rest_API
+
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /lcr/iDyn/
+
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    RewriteRule ^(.*)$ index.php?path=$1 [QSA,L]
+</IfModule>
